@@ -13,7 +13,7 @@ export default function App() {
         <div className="min-h-screen flex flex-col">
             <header className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 py-6 shadow-lg">
                 <h1 className="text-center text-4xl font-extrabold tracking-wider text-black">
-                    🚀 Star Wars Explorer
+                    🚀 Star Wars Explorer Dixon Bustos
                 </h1>
             </header>
 
@@ -32,7 +32,7 @@ export default function App() {
             </BrowserRouter>
 
             <footer className="text-center py-4 text-gray-500">
-                © 2025 Star Wars Explorer
+                © 2025 Star Wars Explorer Dixon Bustos
             </footer>
         </div>
     );
