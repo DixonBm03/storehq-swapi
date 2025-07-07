@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# 🚀 StoreHQ SWAPI Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una SPA en **React**, **Redux Toolkit** y **Tailwind CSS** que consume la [Star Wars API (SWAPI)](https://swapi.dev/), con listados, paginación y vistas de detalle para personajes, planetas y películas de Star Wars.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Instalación
 
-### `npm start`
+Clona el repositorio e instala todas las dependencias:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Repositorio GitHub:**  
+  https://github.com/tu-usuario/storehq-swapi
 
-### `npm test`
+- **Demo en línea (Vercel):**  
+  https://storehq-swapi.vercel.app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone https://github.com/DixonBm03/storehq-swapi.git
+cd storehq-swapi
+npm install
+▶️ Ejecución en Desarrollo
+npm start
+Abre tu navegador en http://localhost:3000
 
-### `npm run build`
+Hot-reload: cada cambio en src/ se refleja automáticamente.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📦 Build de Producción
+npm run build
+Genera el directorio build/ optimizado, listo para desplegar en cualquier servidor estático.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📁 Estructura del Proyecto
+storehq-swapi/
+├── public/                    # Archivos estáticos (index.html, íconos, manifest.json)
+├── src/
+│   ├── api/
+│   │   └── api.js             # Instancia Axios configurada a SWAPI
+│   ├── components/            # UI genéricos
+│   │   ├── Navbar.js          # Menú tipo “tabs”
+│   │   └── Pagination.js      # Botones anterior/siguiente
+│   ├── features/              # Carpetas por dominio + Redux slices
+│   │   ├── people/
+│   │   │   ├── peopleSlice.js
+│   │   │   ├── PeopleList.js
+│   │   │   └── PersonDetail.js
+│   │   ├── planets/
+│   │   │   ├── planetsSlice.js
+│   │   │   ├── PlanetsList.js
+│   │   │   └── PlanetDetail.js
+│   │   └── films/
+│   │       ├── filmsSlice.js
+│   │       └── FilmsList.js
+│   ├── store/
+│   │   └── index.js           # Configuración Redux Toolkit store
+│   ├── App.tsx                # Layout principal + React Router v6
+│   ├── index.css              # Tailwind directives + fondo degradado
+│   └── index.tsx              # Entrada ReactDOM + <Provider>
+├── craco.config.js            # CRACO + PostCSS (Tailwind) config
+├── tailwind.config.js         # Rutas de contenido para purgar
+├── postcss.config.js          # Plugins PostCSS
+├── package.json
+└── README.md
+⚙️ Decisiones Técnicas
+Create React App + CRACO
+Integra Tailwind CSS v4 sin ejectar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tailwind CSS v4
+Clases utilitarias, mobile-first y altamente personalizable.
 
-### `npm run eject`
+Redux Toolkit
+createSlice + createAsyncThunk para manejo sencillo de estado y peticiones asíncronas (paginación incluida).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+React Router v6
+Rutas declarativas con <Routes> y <Navigate>.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Axios
+Cliente HTTP con baseURL apuntando a la SWAPI.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Temática visual
+Fondo oscuro degradado, acentos ámbar/amarillo, tarjetas centradas y espaciadas para buen contraste y legibilidad.
