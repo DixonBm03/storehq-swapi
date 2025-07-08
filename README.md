@@ -54,9 +54,6 @@ storehq-swapi/
 │   ├── App.tsx                # Layout principal + React Router v6
 │   ├── index.css              # Tailwind directives + fondo degradado
 │   └── index.tsx              # Entrada ReactDOM + <Provider>
-├── craco.config.js            # CRACO + PostCSS (Tailwind) config
-├── tailwind.config.js         # Rutas de contenido para purgar
-├── postcss.config.js          # Plugins PostCSS
 ├── package.json
 └── README.md
 ⚙️ Decisiones Técnicas

@@ -1,17 +1,16 @@
-// src/index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './index.css';       // ← Esto debe estar aquí, lo primero
+import './index.css';  // reset + fondo + animaciones
+import './App.css';    // layout general
+
 import App from './App';
 import { Provider } from 'react-redux';
-import store from './store';
+import store          from './store';
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
-root.render(
-    <Provider store={store}>
-        <App />
-    </Provider>
-);
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+    .render(
+        <Provider store={store}>
+            <App />
+        </Provider>
+    );
